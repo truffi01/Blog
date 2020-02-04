@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 
 class HomePage(ListView):
@@ -10,3 +10,12 @@ class HomePage(ListView):
 class PostView(DetailView):
     model = Post
     template_name = 'posts/post_detail.html'
+
+class CreatePostView(CreateView):
+    model = Post
+    template_name = 'posts/create_post.html'
+    fields = ['post_title', 'post_text']
+
+    def form_valid(self,form):
+        form.instance.post_author = self.request.user
+        return super().form_valid(form)
