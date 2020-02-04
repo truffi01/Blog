@@ -7,6 +7,7 @@ class HomePage(ListView):
     template_name = 'posts/index.html'
     context_object_name = "blog_posts"
     ordering = ['-post_date']
+    paginate_by = 3
 
 class PostView(DetailView):
     model = Post
