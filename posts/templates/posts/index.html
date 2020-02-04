@@ -11,7 +11,7 @@
       <div class="card-body">
         <h2 class="card-title">{{ posts.post_title }}</h2>
         <p class="card-text">{{ posts.post_text | truncatechars:100 }}</p>
-        <a href="#" class="btn btn-primary btn-sm">Read More &rarr;</a>
+        <a href="{% url 'post-detail' posts.pk %}" class="btn btn-primary btn-sm">Read More &rarr;</a>
       </div>
       <div class="card-footer text-muted">
         Posted on {{ posts.post_date }} by 

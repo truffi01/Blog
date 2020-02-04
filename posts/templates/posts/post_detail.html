@@ -5,21 +5,21 @@
 <!-- Blog Entries Column -->
 <div class="col-md-8">
 
- {% for posts in blog_posts %}
+ 
  <!-- Blog Post -->
  <div class="card mb-4 mt-4">
    <div class="card-body">
-     <h2 class="card-title">{{ posts.post_title }}</h2>
-     <p class="card-text">{{ posts.post_text | truncatechars:100 }}</p>
-     <a href="#" class="btn btn-primary btn-sm">Read More &rarr;</a>
+     <h2 class="card-title">{{ object.post_title }}</h2>
+     <p class="card-text">{{ object.post_text }}</p>
+ 
    </div>
    <div class="card-footer text-muted">
-     Posted on {{ posts.post_date }} by 
-     <span class= "text-info mr-2">{{ posts.post_author }}</span>
+     Posted on {{ object.post_date }} by 
+     <span class= "text-info mr-2">{{ object.post_author }}</span>
    </div>
  </div>
 
- {% endfor %}
+
 
  <!-- Pagination -->
  <ul class="pagination justify-content-center mb-4">
